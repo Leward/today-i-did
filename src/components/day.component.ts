@@ -8,7 +8,7 @@ import * as moment from "moment";
     <ion-card>
       <ion-card-header>
         <ion-item>
-          <h2 *ngIf="!editMode">{{relativeDate(day)}}</h2>
+          <h2 *ngIf="!editMode">{{relativeDate(day)}} <small>{{day.date.format('DD MMM YYYY')}}</small></h2>
           <h2 *ngIf="editMode">What did you do {{relativeDate(day)}}?</h2>
           <button *ngIf="!editMode" ion-button clear item-end primary (click)="enterEditMode()">
             <ion-icon name='md-create' item-right>
@@ -44,14 +44,18 @@ export class DayComponent {
   editValue: string;
 
   relativeDate(day: Day): string {
-    const diff = moment().diff(day.date, 'days');
-    switch (diff) {
+    const now = moment();
+    const startOfTheDay = now.clone().startOf('day');
+    const minutesSinceStartOfTheDay = now.diff(startOfTheDay, 'minutes');
+    const minutesSinceDate = now.diff(day.date, 'minutes');
+    const diffDays = Math.floor((minutesSinceDate - minutesSinceStartOfTheDay) / (24 * 60)) + 1;
+    switch (diffDays) {
       case 0:
         return "Today";
       case 1:
         return "Yesterday";
       default:
-        return diff + " days ago";
+        return diffDays + " days ago";
     }
   }
 
