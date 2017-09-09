@@ -33,6 +33,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {FillTheDayPage} from "../pages/fill-the-day/fill-the-day";
+import {DayComponent} from "../components/day.component";
+import {Days} from "../providers/days";
+import {Nl2BrPipe} from "../pipes/nl2br.pipe";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -71,7 +75,10 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    FillTheDayPage,
+    DayComponent,
+    Nl2BrPipe
   ],
   imports: [
     BrowserModule,
@@ -102,7 +109,8 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    FillTheDayPage
   ],
   providers: [
     Api,
@@ -112,6 +120,7 @@ export function provideSettings(storage: Storage) {
     GoogleMaps,
     SplashScreen,
     StatusBar,
+    Days,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

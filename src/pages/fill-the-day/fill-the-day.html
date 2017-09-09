@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Today I did...
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngFor="let day of daysForCurrentPage">
+    <day [day]="day" (dayUpdated)="days.update($event)"></day>
+  </div>
+
+  <div>
+    <button ion-button (click)="previousPage()">Previous page</button>
+    <button ion-button (click)="nextPage()">Next page</button>
+  </div>
+
+</ion-content>
