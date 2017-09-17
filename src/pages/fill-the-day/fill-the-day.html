@@ -12,8 +12,8 @@
     <day [day]="day" (dayUpdated)="days.update($event)"></day>
   </div>
 
-  <div>
-    <button ion-button (click)="previousPage()">Previous page</button>
+  <div class="text-center">
+    <button ion-button (click)="previousPage()" [disabled]="page.value == 1">Previous page</button>
     <button ion-button (click)="nextPage()">Next page</button>
   </div>
 
