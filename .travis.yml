@@ -10,5 +10,6 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   local_dir: www
+  fqdn: today.leward.eu
   on:
     branch: master
