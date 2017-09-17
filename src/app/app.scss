@@ -18,3 +18,8 @@
 body {
   user-select: text !important;
 }
+
+textarea {
+  display: block;
+  width: 100%;
+}

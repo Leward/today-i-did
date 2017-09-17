@@ -20,12 +20,13 @@ import * as moment from "moment";
         <div *ngIf="!editMode" [innerHTML]="day.content | nl2br">
         </div>
         <div *ngIf="editMode">
-          <ion-textarea
+          <!-- Used textarea instead of ion-textarea as the latter caused selection issue on mobile (cannot select text not move cursor) -->
+          <textarea
             placeholder="Example: I rode 15km after work and completed a getting started guide about Ionic"
             rows="5"
             [(ngModel)]="editValue"
             autofocus
-          ></ion-textarea>
+          ></textarea>
           <button ion-button color="primary" (click)="saveFromEditMode()">
             Save
           </button>
