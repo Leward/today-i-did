@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 
-import { MainPage } from '../../pages/pages';
-
 import { User } from '../../providers/user';
 
 import { TranslateService } from '@ngx-translate/core';
+import {FillTheDayPage} from "../fill-the-day/fill-the-day";
 
 
 @Component({
@@ -37,9 +36,9 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(FillTheDayPage);
     }, (err) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(FillTheDayPage);
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
