@@ -12,7 +12,6 @@ import { ItemCreatePage } from '../pages/item-create/item-create';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { ListMasterPage } from '../pages/list-master/list-master';
 import { LoginPage } from '../pages/login/login';
-import { MenuPage } from '../pages/menu/menu';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { SignupPage } from '../pages/signup/signup';
@@ -66,7 +65,6 @@ export function provideSettings(storage: Storage) {
     ItemDetailPage,
     ListMasterPage,
     LoginPage,
-    MenuPage,
     SearchPage,
     SettingsPage,
     SignupPage,
@@ -98,7 +96,6 @@ export function provideSettings(storage: Storage) {
     ItemDetailPage,
     ListMasterPage,
     LoginPage,
-    MenuPage,
     SearchPage,
     SettingsPage,
     SignupPage,
