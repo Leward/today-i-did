@@ -46,7 +46,6 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    FillTheDayPage,
     DayComponent,
     Nl2BrPipe
   ],
@@ -71,8 +70,6 @@ export function provideSettings(storage: Storage) {
   providers: [
     Api,
     User,
-    Camera,
-    GoogleMaps,
     SplashScreen,
     StatusBar,
     Days,

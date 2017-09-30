@@ -1,12 +1,16 @@
 import {Component} from "@angular/core";
 
-import {NavController} from "ionic-angular";
+import {IonicPage, NavController} from "ionic-angular";
 
 import {Days} from "../../providers/days";
 import {Day} from "../../models/day";
 import {Observable} from "rxjs/Observable";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
+@IonicPage({
+  name: 'fill-the-day',
+  segment: 'fill-the-day'
+})
 @Component({
   selector: 'fill-the-day',
   templateUrl: 'fill-the-day.html'
