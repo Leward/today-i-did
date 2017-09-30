@@ -10,16 +10,12 @@ import { Api } from '../providers/api';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
 
-import { Camera } from '@ionic-native/camera';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {DayComponent} from "../components/day.component";
 import {Days} from "../providers/days";
-import {Nl2BrPipe} from "../pipes/nl2br.pipe";
 import {FillTheDayPage} from "../pages/fill-the-day/fill-the-day";
 
 // The translate loader needs to know where to load i18n files
@@ -45,9 +41,7 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp,
-    DayComponent,
-    Nl2BrPipe
+    MyApp
   ],
   imports: [
     BrowserModule,
