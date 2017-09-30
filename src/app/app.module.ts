@@ -17,6 +17,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {Days} from "../providers/days";
 import {FillTheDayPage} from "../pages/fill-the-day/fill-the-day";
+import {FillTheDayPageModule} from "../pages/fill-the-day/fill-the-day.module";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -54,7 +55,8 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FillTheDayPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

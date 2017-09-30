@@ -9,7 +9,7 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 @IonicPage({
   name: 'fill-the-day',
-  segment: 'fill-the-day'
+  segment: 'days'
 })
 @Component({
   selector: 'fill-the-day',
