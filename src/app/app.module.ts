@@ -10,17 +10,14 @@ import { Api } from '../providers/api';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
 
-import { Camera } from '@ionic-native/camera';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {DayComponent} from "../components/day.component";
 import {Days} from "../providers/days";
-import {Nl2BrPipe} from "../pipes/nl2br.pipe";
 import {FillTheDayPage} from "../pages/fill-the-day/fill-the-day";
+import {FillTheDayPageModule} from "../pages/fill-the-day/fill-the-day.module";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -45,10 +42,7 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp,
-    FillTheDayPage,
-    DayComponent,
-    Nl2BrPipe
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -61,7 +55,8 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FillTheDayPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -71,8 +66,6 @@ export function provideSettings(storage: Storage) {
   providers: [
     Api,
     User,
-    Camera,
-    GoogleMaps,
     SplashScreen,
     StatusBar,
     Days,

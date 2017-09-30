@@ -7,7 +7,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Settings } from '../providers/providers';
 
 import { TranslateService } from '@ngx-translate/core'
-import {FillTheDayPage} from "../pages/fill-the-day/fill-the-day";
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -29,12 +28,12 @@ import {FillTheDayPage} from "../pages/fill-the-day/fill-the-day";
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FillTheDayPage;
+  rootPage = 'fill-the-day';
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Fill the day', component: FillTheDayPage }
+    { title: 'Fill the day', component: 'fill-the-day' }
   ];
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
